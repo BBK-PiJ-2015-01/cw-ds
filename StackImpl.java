@@ -1,3 +1,7 @@
+/**
+ *
+ * @author Simon Baird
+ */
 public class StackImpl extends AbstractStack {
 
     private final int FIFO = 0;

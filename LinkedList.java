@@ -1,14 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package assignment;
-
-import static cwsrc.ErrorMessage.*;
-import cwsrc.List;
-import cwsrc.ReturnObject;
-
 /**
  *
  * @author user0001
@@ -57,26 +46,26 @@ public class LinkedList implements List {
     public ReturnObject get(int index) {
 
         if (head == null) {
-            return new ReturnObjectImpl(null, EMPTY_STRUCTURE);
+            return new ReturnObjectImpl(null, ErrorMessage.EMPTY_STRUCTURE);
         }
         if (isOutOfBounds(index)) {
-            return new ReturnObjectImpl(null, INDEX_OUT_OF_BOUNDS);
+            return new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
         }
         if (index == 0) {
-            return new ReturnObjectImpl(head.value, NO_ERROR);
+            return new ReturnObjectImpl(head.value, ErrorMessage.NO_ERROR);
         }
         ListItem listItemAtIndex = getListItemAtIndex(index);
-        return new ReturnObjectImpl(listItemAtIndex.value, NO_ERROR);
+        return new ReturnObjectImpl(listItemAtIndex.value, ErrorMessage.NO_ERROR);
     }
 
     @Override
     public ReturnObject remove(int index) {
 
         if (head == null) {
-            return new ReturnObjectImpl(null, EMPTY_STRUCTURE);
+            return new ReturnObjectImpl(null, ErrorMessage.EMPTY_STRUCTURE);
         }
         if (isOutOfBounds(index)) {
-            return new ReturnObjectImpl(null, INDEX_OUT_OF_BOUNDS);
+            return new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
         }
 
         ListItem listItemAtIndex = getListItemAtIndex(index);
@@ -94,17 +83,17 @@ public class LinkedList implements List {
         if (head == null) {
             tail = null;
         }
-        return new ReturnObjectImpl(listItemAtIndex.value, NO_ERROR);
+        return new ReturnObjectImpl(listItemAtIndex.value, ErrorMessage.NO_ERROR);
     }
 
     @Override
     public ReturnObject add(int index, Object item) {
 
         if (item == null) {
-            return new ReturnObjectImpl(null, INVALID_ARGUMENT);
+            return new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
         }
         if (index != 0 && isOutOfBounds(index)) {
-            return new ReturnObjectImpl(null, INDEX_OUT_OF_BOUNDS);
+            return new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
         }
         ListItem addItem = new ListItem(item);
         if (head == null) {
@@ -121,14 +110,14 @@ public class LinkedList implements List {
                 addItem.prev.next = addItem;
             }
         }
-        return new ReturnObjectImpl(null, NO_ERROR);
+        return new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
     }
 
     @Override
     public ReturnObject add(Object item) {
 
         if (item == null) {
-            return new ReturnObjectImpl(null, INVALID_ARGUMENT);
+            return new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
         }
         ListItem addItem = new ListItem(item);
         if (head == null) {
@@ -139,7 +128,7 @@ public class LinkedList implements List {
             addItem.prev = tail;
             tail = addItem;
         }
-        return new ReturnObjectImpl(null, NO_ERROR);
+        return new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
     }
 
     public Object[] asArray() {
@@ -188,3 +177,4 @@ public class LinkedList implements List {
         }
     }
 }
+

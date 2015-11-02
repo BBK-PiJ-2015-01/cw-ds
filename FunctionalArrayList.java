@@ -1,3 +1,8 @@
+/**
+ *  Implementation of the FunctionalList backed by an ArrayList;
+ * 
+ * @author Simon Baird
+ */
 public class FunctionalArrayList extends ArrayList implements FunctionalList {
 
     private final int HEAD_INDEX = 0;

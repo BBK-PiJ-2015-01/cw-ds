@@ -1,3 +1,7 @@
+/**
+ * 
+ * @author Simon Baird
+ */
 public class ImprovedStackImpl implements ImprovedStack {
 
     private final List list;

@@ -1,3 +1,7 @@
+/**
+ *
+ * @author Simon Baird
+ */
 public class SampleableListImpl extends ArrayList implements SampleableList {
 
     public SampleableListImpl() {

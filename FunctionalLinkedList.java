@@ -1,3 +1,8 @@
+/**
+ *  Implementation of the FunctionalList backed by a LinkedList;
+ * 
+ * @author Simon Baird
+ */
 public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 
     @Override

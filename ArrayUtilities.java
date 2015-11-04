@@ -10,15 +10,11 @@ public class ArrayUtilities {
      * Returns an identical copy of a supplied array.
      *
      * @param array to copy
-     * @return an Object array identical to the supplied value
+     * @return an Object array identical to the supplied value or an empty
+     * array if the supplied array is null
      */
     public static Object[] copy(Object[] array) {
 
-//        Object[] to = new Object[array.length];
-//        for (int i = 0; i < array.length; i++) {
-//            to[i] = array[i];
-//        }
-//        return to;
         return copy(array, 0);
     }
 
@@ -27,11 +23,12 @@ public class ArrayUtilities {
      *
      * @param array to copy
      * @param from index offset to begin copy from
-     * @return an Object array representing a subset of the supplied value
+     * @return an Object array identical to the supplied value or an empty
+     * array if the supplied array is null
      */
     public static Object[] copy(Object[] array, int from) {
 
-        if (from >= array.length) {
+        if (array == null || from >= array.length) {
             return new Object[0];
         }
         Object[] to = new Object[array.length - from];

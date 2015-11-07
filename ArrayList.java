@@ -179,7 +179,8 @@ public class ArrayList implements List {
         if (isEmpty() || indexToRemove < 0) {
             return;
         }
-        ArrayUtilities.shuffleArrayUp(array, indexToRemove, insertPosition);
+        int from = insertPosition >= array.length ? array.length -1 : insertPosition; 
+        ArrayUtilities.shuffleArrayUp(array, indexToRemove, from);
         insertPosition--;
     }
 }

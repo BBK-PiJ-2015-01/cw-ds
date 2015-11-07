@@ -19,7 +19,9 @@ public class StackImpl extends AbstractStack {
     public int size() {
         return internalList.size();
     }
-
+    /**
+    * Adds an element at the top of the stack. If the item is null then the request is ignored.
+    */
     @Override
     public void push(Object item) {
         internalList.add(FIFO, item);

@@ -8,10 +8,16 @@ public class ImprovedStackImpl implements ImprovedStack {
     //
     private final int FIFO = 0;
 
+    /**
+    * Creates a new abstract stack using the provided list as the
+    * underlying data structure. If the supplied list is null then
+    * a the underlying list will be implemented using an ArrayList.
+    * 
+    * @param list the list to be used 
+    */
     public ImprovedStackImpl(List list) {
-        //trigger an exception if the list is null
-        list.size();
-        this.list = list;
+
+        this.list = list == null ? new ArrayList() : list;
     }
 
     @Override
